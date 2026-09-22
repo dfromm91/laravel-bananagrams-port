@@ -1,10 +1,12 @@
 <?php
 
+use App\Http\Controllers\Game\SoloGameController;
 use Illuminate\Support\Facades\Route;
 
 Route::inertia('/', 'game/home')->name('home');
 Route::inertia('/rules', 'game/rules')->name('game.rules');
-Route::inertia('/singleplayer', 'game/singleplayer')->name('game.singleplayer');
+Route::get('/singleplayer', [SoloGameController::class, 'show'])->block()->name('game.singleplayer');
+Route::post('/singleplayer/action', [SoloGameController::class, 'action'])->middleware('throttle:120,1')->block()->name('game.singleplayer.action');
 Route::inertia('/bananagrams', 'game/setup')->name('game.setup');
 Route::inertia('/profile', 'game/profile')->middleware('auth')->name('game.profile');
 

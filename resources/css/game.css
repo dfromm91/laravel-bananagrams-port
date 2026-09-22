@@ -732,3 +732,32 @@
     min-width: 160px;
     padding: 8px;
 }
+.game-surface .play-area {
+    max-width: 100%;
+    min-width: 0;
+    border: 0;
+    padding: 0;
+}
+.game-surface .game-controls {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 12px;
+    justify-content: center;
+}
+.game-surface .game-summary {
+    margin: 1rem;
+    text-align: center;
+    font-weight: bold;
+}
+.game-surface .app .grid-cell.invalid-word {
+    background: #ff8080;
+}
+.game-surface .game-confirmation {
+    margin: 1rem;
+    padding: 1rem;
+    border: 2px solid #ffd700;
+    border-radius: 8px;
+}
+.game-surface .game-confirmation button {
+    margin: 8px;
+}
