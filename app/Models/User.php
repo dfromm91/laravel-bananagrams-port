@@ -47,6 +47,7 @@ class User extends Authenticatable implements MustVerifyEmail
         ];
     }
 
+    /** @return BelongsToMany<Game, $this, GamePlayer> */
     public function games(): BelongsToMany
     {
         return $this

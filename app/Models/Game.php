@@ -3,8 +3,8 @@
 namespace App\Models;
 
 use Illuminate\Database\Eloquent\Attributes\Fillable;
-use Illuminate\Database\Eloquent\Relations\BelongsToMany;
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Database\Eloquent\Relations\BelongsToMany;
 
 #[Fillable(['mode', 'status', 'max_players', 'state'])]
 class Game extends Model
@@ -20,6 +20,7 @@ class Game extends Model
         ];
     }
 
+    /** @return BelongsToMany<User, $this, GamePlayer> */
     public function players(): BelongsToMany
     {
         return $this
